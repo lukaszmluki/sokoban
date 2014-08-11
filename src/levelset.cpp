@@ -16,10 +16,9 @@ LevelSet::~LevelSet()
 
 bool LevelSet::load()
 {
-    QString filename(QDir::homePath().append(QDir::separator()).append(".sokoban").append(QDir::separator()).append(m_file));
-    QFile file(filename);
+    QFile file(m_file);
     if(!file.open(QIODevice::ReadOnly)) {
-        qWarning() << "Cannot open file" << filename;
+        qWarning() << "Cannot open file" << m_file;
         return false;
     }
     QTextStream in(&file);
