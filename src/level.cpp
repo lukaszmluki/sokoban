@@ -52,6 +52,7 @@ bool Level::parse(const QStringList &definition)
         m_width = qMax(m_width, w);
         part.clear();
     }
+    ++m_height;
     for (auto it = m_map.begin(); it != m_map.end(); ++it)
         while (it->count() < m_width)
             it->append(Field::EMPTY);
