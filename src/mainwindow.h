@@ -3,16 +3,16 @@
 
 #include <QMainWindow>
 
+class QKeyEvent;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = 0);
 
-signals:
-
-public slots:
-
+protected:
+    bool eventFilter(QObject *obj, QEvent *event);
 };
 
 #endif // MAINWINDOW_H
