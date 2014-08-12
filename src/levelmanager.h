@@ -14,7 +14,7 @@ class LevelManager : public QObject
 public:
     static LevelManager& instance();
     bool selectLevel(int levelSetIndex, int levelIndex);
-    Level& selectedLevel() { return m_selectedLevel; }
+    const Level& selectedLevel() { return m_selectedLevel; }
 
 signals:
     void levelSelected();

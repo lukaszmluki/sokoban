@@ -13,11 +13,12 @@ LevelManager::LevelManager(QObject *parent) :
                append(".sokoban").append(QDir::separator()).append("levels").
                append(QDir::separator()).append(file);
     };
-    m_sets.append(new LevelSet(addPath("AKK_Informatika.txt"), this));
+    m_sets.append(new LevelSet(addPath("AKK_Informatika.txt")));
 }
 
 LevelManager::~LevelManager()
 {
+    qDeleteAll(m_sets);
 }
 
 LevelManager& LevelManager::instance()
@@ -38,7 +39,7 @@ bool LevelManager::selectLevel(int levelSetIndex, int levelIndex)
 
     m_levelSetIndex = levelSetIndex;
     m_levelIndex = levelIndex;
-    m_selectedLevel = *(m_sets.at(levelSetIndex)->level(levelIndex));
+    m_selectedLevel = m_sets.at(levelSetIndex)->level(levelIndex);
     emit levelSelected();
     return true;
 }

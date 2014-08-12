@@ -17,11 +17,14 @@ SOURCES += src/main.cpp \
     src/gameview.cpp \
     src/level.cpp \
     src/levelset.cpp \
-    src/levelmanager.cpp
+    src/levelmanager.cpp \
+    src/txtparser.cpp
 
 HEADERS += \
     src/mainwindow.h \
     src/gameview.h \
     src/level.h \
     src/levelset.h \
-    src/levelmanager.h
+    src/levelmanager.h \
+    src/iparser.h \
+    src/txtparser.h

@@ -1,32 +1,23 @@
 #ifndef LEVELSET_H
 #define LEVELSET_H
 
-#include <QObject>
 #include <QString>
 #include <QList>
 #include "level.h"
+#include "iparser.h"
 
-class LevelSet : public QObject
+class LevelSet
 {
-    Q_OBJECT
 public:
-    explicit LevelSet(const QString &file, QObject *parent = 0);
+    explicit LevelSet(const QString &file);
     ~LevelSet();
 
-    int count() const { return m_levels.count(); }
-    QString name() const { return m_name; }
-    const Level* level(int index) const { return m_levels.at(index); }
-
-signals:
-
-public slots:
+    int count() const { return m_parser->levelCount(); }
+    QString name() const { return m_parser->levelSetName(); }
+    Level level(int index) const { return m_parser->getLevel(index); }
 
 private:
-    bool load();
-
-    QString m_file;
-    QString m_name;
-    QList<const Level *> m_levels;
+    IParser *m_parser;
 };
 
 #endif // LEVELSET_H
