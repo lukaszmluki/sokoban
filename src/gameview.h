@@ -6,12 +6,14 @@
 class QPaintEvent;
 class QRect;
 class QPainter;
+class QImage;
 
 class GameView : public QWidget
 {
     Q_OBJECT
 public:
     explicit GameView(QWidget *parent = 0);
+    ~GameView();
 
 protected:
     void paintEvent(QPaintEvent *event);
@@ -21,10 +23,11 @@ public slots:
     void resizeForLevel();
 
 private:
-    void drawWall(QPainter &painter, const QRect &rect);
-    void drawBox(QPainter &painter, const QRect &rect);
-    void drawGoal(QPainter &painter, const QRect &rect);
-    void drawPlayer(QPainter &painter, const QRect &rect);
+    QImage *m_imgWall;
+    QImage *m_imgGoal;
+    QImage *m_imgGround;
+    QImage *m_imgBox;
+    QImage *m_imgBoxGoal;
 };
 
 #endif // GAMEVIEW_H

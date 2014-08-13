@@ -9,6 +9,8 @@ QMAKE_CXXFLAGS += -Werror -Wextra -Wno-error=unused-parameter -std=c++11
 
 INCLUDEPATH += ./src/
 
+RESOURCES     = soko.qrc
+
 MOC_DIR = ./moc
 OBJECTS_DIR = ./obj
 
