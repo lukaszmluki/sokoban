@@ -22,7 +22,9 @@ public:
         BOX_ON_GOAL    = F_GOAL | F_BOX,
     };
 
-    explicit Level(const QVector<QVector<Field>> &definition, const QString &name);
+    typedef QVector<QVector<Field>> LevelMap;
+
+    explicit Level(const LevelMap &definition, const QString &name);
 
     Level() :
         m_valid(false)
@@ -34,9 +36,10 @@ public:
     int height() const { return m_height; }
     bool isValid() const { return m_valid; }
     QString name() const { return m_name; }
+    LevelMap getMap() const { return m_map; }
 
 private:
-    QVector<QVector<Field>> m_map;
+    LevelMap m_map;
     int m_width;
     int m_height;
     bool m_valid;

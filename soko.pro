@@ -20,7 +20,8 @@ SOURCES += src/main.cpp \
     src/level.cpp \
     src/levelset.cpp \
     src/levelmanager.cpp \
-    src/txtparser.cpp
+    src/txtparser.cpp \
+    src/game.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -29,4 +30,5 @@ HEADERS += \
     src/levelset.h \
     src/levelmanager.h \
     src/iparser.h \
-    src/txtparser.h
+    src/txtparser.h \
+    src/game.h

@@ -2,7 +2,7 @@
 #include <QStringList>
 #include <QDebug>
 
-Level::Level(const QVector<QVector<Field>> &definition, const QString &name) :
+Level::Level(const LevelMap &definition, const QString &name) :
     m_map(definition),
     m_width(definition.at(0).count()),
     m_height(definition.count()),
